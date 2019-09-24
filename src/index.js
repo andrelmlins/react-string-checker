@@ -19,6 +19,11 @@ babel.transformFile("src/dev/Component.js", babelConfigs, (err, result) => {
 
 const readBody = element => {
   console.log(element.type);
+
+  if (element.type === "StringLiteral" || element.type === "StringLiteral") {
+    console.log(element);
+  }
+
   let elements = [];
   if (element.body) {
     if (element.body.length > 0) {
@@ -29,9 +34,16 @@ const readBody = element => {
   }
 
   if (element.argument) {
-    element.argument.arguments.map(item =>
-      readBody(item).map(item => elements.push(item))
-    );
+    element.argument.arguments
+      .slice(2)
+      .map(item => readBody(item).map(item => elements.push(item)));
   }
+
+  if (element.arguments) {
+    element.arguments
+      .slice(2)
+      .map(item => readBody(item).map(item => elements.push(item)));
+  }
+
   return elements;
 };

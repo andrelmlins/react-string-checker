@@ -6,7 +6,10 @@ class AboutScreen extends React.Component {
     return (
       <Typography variant="h2" color="inherit">
         <h2>teste</h2>
-        About us
+        <Typography>
+          <div>outro1</div>
+        </Typography>
+        {t("About us")}
       </Typography>
     );
   }
