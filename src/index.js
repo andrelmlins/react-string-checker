@@ -6,25 +6,24 @@ const babelConfigs = {
   presets: ["@babel/preset-react"]
 };
 
-babel.transformFile("src/dev/Component.js", babelConfigs, (err, result) => {
+const file = "src/dev/Component.js";
+
+babel.transformFile(file, babelConfigs, (err, result) => {
   const body = result.ast.program.body;
   const listElements = readBody(result.ast.program);
 
-  listElements.map(item => {
-    if (item.type === "StringLiteral") {
-      console.log(item);
-    }
-  });
+  const strings = listElements.filter(item => item.type === "StringLiteral");
+
+  if (strings.length > 0) {
+    console.log("\x1b[33m", `File ${file}`, "\x1b[0m");
+    strings.map(string =>
+      console.log("\x1b[31m", `\t${string.value}`, "\x1b[0m")
+    );
+  }
 });
 
 const readBody = element => {
-  console.log(element.type);
-
-  if (element.type === "StringLiteral" || element.type === "StringLiteral") {
-    console.log(element);
-  }
-
-  let elements = [];
+  let elements = [element];
   if (element.body) {
     if (element.body.length > 0) {
       element.body.map(item => readBody(item).map(item => elements.push(item)));
