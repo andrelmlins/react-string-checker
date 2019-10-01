@@ -1,5 +1,6 @@
+"use strict";
+
 const babel = require("@babel/core");
-const compiler = require("./compiler");
 
 const babelConfigs = {
   ast: true,
