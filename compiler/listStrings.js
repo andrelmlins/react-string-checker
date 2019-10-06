@@ -9,12 +9,17 @@ const babelConfigs = {
 };
 
 const listStrings = file => {
-  console.log(file);
-  const result = babel.transformFileSync(file, babelConfigs);
-  const listElements = readBody(result.ast.program);
-  const strings = listElements.filter(item => item.type === "StringLiteral");
+  try {
+    const result = babel.transformFileSync(file, babelConfigs);
 
-  return strings;
+    const listElements = readBody(result.ast.program);
+    const strings = listElements.filter(item => item.type === "StringLiteral");
+
+    return strings;
+  } catch (e) {
+    console.log(e);
+    return [];
+  }
 };
 
 module.exports = listStrings;
