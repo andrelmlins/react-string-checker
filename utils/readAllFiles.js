@@ -15,6 +15,8 @@ const readAllFiles = path => {
   files.forEach(file => {
     if (fs.lstatSync(`${path}/${file}`).isFile()) {
       filesResult.push(`${path}/${file}`);
+    } else {
+      readAllFiles(`${path}/${file}`).map(item => filesResult.push(item));
     }
   });
 
