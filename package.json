@@ -1,5 +1,5 @@
 {
-  "name": "react-i18next-checker",
+  "name": "react-string-checker",
   "version": "0.1.0",
   "description": "",
   "main": "src/index.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "bin": {
-    "react-i18n-checker": "./src/bin/reactI18nChecker.js"
+    "react-string-checker": "./src/bin/reactI18nChecker.js"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
