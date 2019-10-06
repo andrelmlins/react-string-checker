@@ -5,9 +5,9 @@
 ## Installation
 
 ```
-npm i react-easyfullscreen
+npm i --save-dev react-easyfullscreen
 // OR
-yarn add react-easyfullscreen
+yarn add -D react-easyfullscreen
 ```
 
 ## Starting
