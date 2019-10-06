@@ -1,28 +1,5 @@
 "use strict";
 
-const babel = require("@babel/core");
-
-const babelConfigs = {
-  ast: true,
-  presets: ["@babel/preset-react"]
-};
-
-const file = "src/dev/Component.js";
-
-babel.transformFile(file, babelConfigs, (err, result) => {
-  const body = result.ast.program.body;
-  const listElements = readBody(result.ast.program);
-
-  const strings = listElements.filter(item => item.type === "StringLiteral");
-
-  if (strings.length > 0) {
-    console.log("\x1b[33m", `File ${file}`, "\x1b[0m");
-    strings.map(string =>
-      console.log("\x1b[31m", `\t${string.value}`, "\x1b[0m")
-    );
-  }
-});
-
 const readBody = element => {
   let elements = [element];
   if (element.body) {
@@ -47,3 +24,5 @@ const readBody = element => {
 
   return elements;
 };
+
+module.exports = readBody;
