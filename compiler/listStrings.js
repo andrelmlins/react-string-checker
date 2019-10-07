@@ -5,7 +5,11 @@ const readBody = require("../utils/readBody");
 
 const babelConfigs = {
   ast: true,
-  presets: ["@babel/preset-react"]
+  presets: ["@babel/preset-react"],
+  plugins: [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
 };
 
 const listStrings = file => {
