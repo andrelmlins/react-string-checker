@@ -5,9 +5,9 @@
 ## Installation
 
 ```
-npm i --save-dev react-easyfullscreen
+npm i --save-dev react-string-checker
 // OR
-yarn add -D react-easyfullscreen
+yarn add -D react-string-checker
 ```
 
 ## Starting
