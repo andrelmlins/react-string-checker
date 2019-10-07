@@ -24,7 +24,7 @@
     "test": "echo \"Error: no test specified\""
   },
   "bin": {
-    "react-string-checker": "./bin/reactI18nChecker.js"
+    "react-string-checker": "./bin/reactStringChecker.js"
   },
   "dependencies": {
     "@babel/core": "^7.6.2",
