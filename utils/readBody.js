@@ -1,5 +1,7 @@
 "use strict";
 
+const sensitiveProperties = require("../utils/sensitiveProperties");
+
 const readBody = element => {
   let elements = [];
 
@@ -23,8 +25,16 @@ const readBody = element => {
 
     if (element.arguments) {
       element.arguments
-        .slice(2)
+        .slice(1)
         .map(item => readBody(item).map(item => elements.push(item)));
+    }
+
+    if (element.properties) {
+      element.properties.map(item => {
+        if (sensitiveProperties.includes(item.key.name)) {
+          elements.push(item.value);
+        }
+      });
     }
 
     if (element.declarations) {
