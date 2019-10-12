@@ -2,7 +2,7 @@
 
 "use strict";
 
-const CheckerStrings = require("../compiler/CheckerStrings");
+const CheckerStrings = require("../index.js");
 
 const checkerStrings = new CheckerStrings("./src");
 

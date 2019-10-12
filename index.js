@@ -1,13 +1,21 @@
-const readAllFiles = require("./utils/readAllFiles");
-const listStrings = require("./compiler/listStrings");
+"use strict";
 
-class ReactStringChecker {
-  runChecker(path) {
-    const files = readAllFiles(path);
+const babel = require("@babel/core");
+const babelConfig = require("./configs/babelConfig");
+const readBody = require("./utils/readBody");
+const readAllFiles = require("./utils/readAllFiles");
+
+class CheckerStrings {
+  constructor(path) {
+    this.path = path;
+  }
+
+  run() {
+    const files = readAllFiles(this.path);
 
     files.map(file => {
       if (file.match("^.+\\.(js|jsx|ts|tsx)$")) {
-        const strings = listStrings(file);
+        const strings = this.listFileString(file);
 
         if (strings.length > 0) {
           console.log("\x1b[33m", `File ${file}`, "\x1b[0m");
@@ -18,6 +26,31 @@ class ReactStringChecker {
       }
     });
   }
+
+  listFileString(file) {
+    const result = babel.transformFileSync(file, babelConfig);
+    const listElements = readBody(result.ast.program);
+    const strings = listElements.filter(item => item.type === "StringLiteral");
+
+    return strings;
+  }
+
+  listAllStrings() {
+    const files = readAllFiles(this.path);
+    const list = [];
+
+    files.map(file => {
+      if (file.match("^.+\\.(js|jsx|ts|tsx)$")) {
+        const strings = this.listFileString(file);
+
+        if (strings.length > 0) {
+          list.push({ file, strings });
+        }
+      }
+    });
+
+    return list;
+  }
 }
 
-module.exports = ReactStringChecker;
+module.exports = CheckerStrings;
