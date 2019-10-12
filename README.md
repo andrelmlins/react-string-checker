@@ -12,7 +12,7 @@ yarn add -D react-string-checker
 
 ## Starting
 
-Insert into `package.json` file script:
+### Insert into `package.json` file script:
 
 ```
 ...
@@ -24,8 +24,30 @@ Insert into `package.json` file script:
 ...
 ```
 
-Run the command:
+### Run the command:
 
 ```
 yarn string-checker
+```
+
+## Using in NodeJS:
+
+### Running checker
+
+```
+const CheckerStrings = require("react-string-checker");
+
+const checkerStrings = new CheckerStrings("./src");
+
+checkerStrings.run();
+```
+
+### Get checker result
+
+```
+const CheckerStrings = require("react-string-checker");
+
+const checkerStrings = new CheckerStrings("./src");
+
+const strings = checkerStrings.listAllStrings();
 ```
