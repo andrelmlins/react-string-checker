@@ -34,7 +34,7 @@ yarn string-checker
 
 ### Running checker
 
-```
+```javascript
 const CheckerStrings = require("react-string-checker");
 
 const checkerStrings = new CheckerStrings("./src");
@@ -44,7 +44,7 @@ checkerStrings.run();
 
 ### Get checker result
 
-```
+```javascript
 const CheckerStrings = require("react-string-checker");
 
 const checkerStrings = new CheckerStrings("./src");
