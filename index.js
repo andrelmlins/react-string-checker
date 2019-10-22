@@ -22,6 +22,10 @@ class CheckerStrings {
           strings.map(string =>
             console.log("\x1b[31m", `\tString: "${string.value}"`, "\x1b[0m")
           );
+
+          if (process.env.CI && (process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false')) {
+            process.exit(1);
+          }
         }
       }
     });

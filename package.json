@@ -21,7 +21,7 @@
     "url": "https://github.com/andrelmlins/react-string-checker/issues"
   },
   "scripts": {
-    "start": "./bin/reactI18nChecker.js",
+    "start": "./bin/reactStringChecker.js",
     "test": "echo \"Error: no test specified\""
   },
   "bin": {
