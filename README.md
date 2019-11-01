@@ -51,3 +51,7 @@ const checkerStrings = new CheckerStrings("./src");
 
 const strings = checkerStrings.listAllStrings();
 ```
+
+## License
+
+React String Checker is open source software [licensed as MIT](https://github.com/andrelmlins/react-string-checker/blob/master/LICENSE).
