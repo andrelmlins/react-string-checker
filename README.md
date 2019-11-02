@@ -52,6 +52,12 @@ const checkerStrings = new CheckerStrings("./src");
 const strings = checkerStrings.listAllStrings();
 ```
 
+## NPM Statistics
+
+Download stats for this NPM package
+
+[![NPM](https://nodei.co/npm/react-string-checker.png)](https://nodei.co/npm/react-string-checker/)
+
 ## License
 
 React String Checker is open source software [licensed as MIT](https://github.com/andrelmlins/react-string-checker/blob/master/LICENSE).
