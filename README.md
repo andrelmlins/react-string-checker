@@ -28,9 +28,9 @@ yarn add -D react-string-checker
 ```
 ...
 "scripts": {
-    ...
-    "string-checker": "react-string-checker"
-    ...
+  ...
+  "string-checker": "react-string-checker"
+  ...
 }
 ...
 ```
@@ -46,9 +46,9 @@ yarn string-checker
 ### Running checker
 
 ```javascript
-const CheckerStrings = require("react-string-checker");
+const CheckerStrings = require('react-string-checker');
 
-const checkerStrings = new CheckerStrings("./src");
+const checkerStrings = new CheckerStrings('./src');
 
 checkerStrings.run();
 ```
@@ -56,9 +56,9 @@ checkerStrings.run();
 ### Get checker result
 
 ```javascript
-const CheckerStrings = require("react-string-checker");
+const CheckerStrings = require('react-string-checker');
 
-const checkerStrings = new CheckerStrings("./src");
+const checkerStrings = new CheckerStrings('./src');
 
 const strings = checkerStrings.listAllStrings();
 ```

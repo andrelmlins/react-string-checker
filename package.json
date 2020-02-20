@@ -2,8 +2,8 @@
   "name": "react-string-checker",
   "version": "0.3.4",
   "description": "String Literal Searcher",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "homepage": "https://github.com/andrelmlins/react-string-checker",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "url": "https://github.com/andrelmlins/react-string-checker/issues"
   },
   "scripts": {
-    "start": "./bin/reactStringChecker.js",
+    "start": "./src/bin/reactStringChecker.js --path=./example",
     "test": "echo \"Error: no test specified\""
   },
   "bin": {
