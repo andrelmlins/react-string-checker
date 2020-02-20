@@ -1,1 +1,1 @@
-module.exports = ["aria-label", "title", "label", "placeholder"];
+module.exports = ['aria-label', 'title', 'label', 'placeholder'];

@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
 const babelConfigs = {
   ast: true,
-  presets: ["@babel/preset-react"],
+  presets: ['@babel/preset-react'],
   plugins: [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/proposal-object-rest-spread"
+    '@babel/plugin-proposal-class-properties',
+    '@babel/proposal-object-rest-spread'
   ]
 };
 

@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const sensitiveProperties = require("../utils/sensitiveProperties");
+const sensitiveProperties = require('../utils/sensitiveProperties');
 
 const readBody = element => {
   let elements = [];
