@@ -1,6 +1,6 @@
 {
   "name": "react-string-checker",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "String Literal Searcher",
   "main": "src/index.js",
   "module": "src/index.js",
